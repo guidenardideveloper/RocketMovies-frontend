@@ -34,6 +34,7 @@ export const Profile = styled.div`
         border: none;
         border-radius: 10px;
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
+        color: ${({ theme }) => theme.COLORS.GRAY_200};
     }
 
     > div {
