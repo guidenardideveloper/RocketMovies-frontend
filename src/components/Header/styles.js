@@ -2,12 +2,18 @@ import styled from "styled-components";
 
 
 export const Container = styled.header`
+
+    grid-area: header;
+
     width: 100%;
     height: 116px;
     border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
 
     display: flex;
     align-items: center;
+
+    position: absolute;
+    z-index: -1;
 `;
 
 export const Profile = styled.div`

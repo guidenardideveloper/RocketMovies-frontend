@@ -12,9 +12,11 @@ export default {
 
         WHITE: "#FFFFFF",
         WHITE_100: "#F4EDE8",
+        WHITE_200: "#E5E5E5",
 
         BACKGROUND_100: "#262529",
         BACKGROUND_200: "#1C1B1E",
         BACKGROUND_300: "#0D0C0F",
+        BACKGROUND_400: "#282124",
     }
 }

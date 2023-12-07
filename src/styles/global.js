@@ -30,7 +30,30 @@ export default createGlobalStyle`
         transition: filter 0.2s;
     }
 
-    button:hover, a:hover {
+    a:hover {
         filter: brightness(0.9);
+    }
+
+
+    * {
+    --sb-track-color: transparent;
+    --sb-thumb-color: ${({ theme }) => theme.COLORS.PINK};
+    --sb-size: 8px;
+
+    scrollbar-color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
+    *::-webkit-scrollbar {
+    width: 8px; 
+    }
+
+    *::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 8px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PINK};;
+    border-radius: 8px;
     }
 `;
