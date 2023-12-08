@@ -10,23 +10,20 @@ export const Container = styled.header`
     border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
 
     display: flex;
-    align-items: center;
-
-    position: absolute;
-    z-index: -1;
+    justify-content: space-between;
 `;
 
 export const Profile = styled.div`
-    width: 1123px;
+
+    width: 1120px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 
-    margin: auto;
+    margin: 0 auto;
 
-    h1 {
+    > h1 {
         font-size: 24px;
         font-style: normal;
         font-weight: 700;
@@ -34,25 +31,39 @@ export const Profile = styled.div`
         color: ${({ theme }) => theme.COLORS.PINK};
     }
 
-    input {
+    > input {
         width: 630px;
         padding: 19px 24px;
         border: none;
         border-radius: 10px;
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
+
+        font-size: 14px;
+        font-weight: 400;
         color: ${({ theme }) => theme.COLORS.GRAY_200};
     }
 
     > div {
         display: flex;
         align-items: center;
+        line-height: 24px;
+
+
+
+        img {
+            width: 64px;
+            height: 64px;
+            border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
+            border-radius: 50%;
+        }
 
         div {
             display: flex;
             flex-direction: column;
-            margin-left: 8px;
+            margin-right: 9px;
+
             strong {
-                font-size: 15px;
+                font-size: 14px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
@@ -60,22 +71,20 @@ export const Profile = styled.div`
             }
 
             span {
+                text-align: end;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
                 color: ${({ theme }) => theme.COLORS.GRAY_200};
-                text-align: right;
             }
         }
+    }
 
-        div {
-            img {
-                width: 64px;
-                height: 64px;
-                border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
-                border-radius: 50%;
-            }
-        }
+    > img {
+        width: 64px;
+        height: 64px;
+        border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
+        border-radius: 50%;
     }
 `;
