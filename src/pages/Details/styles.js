@@ -10,11 +10,18 @@ export const Container = styled.div`
     grid-template-areas: 
     "header" 
     "content";
+
+    > main {
+        grid-area: content;
+        overflow-y: scroll;
+    }
 `;
 
 export const Content = styled.div`
+    
     width: 1137px;
-    height: 581px;
+    height: 550px;
+    padding-right: 24px;
     margin: 40px auto 0 auto;
 
     display: flex;
@@ -100,7 +107,6 @@ export const Content = styled.div`
     }
 
     > .movieDescription {
-
         p {
             text-align: justify;
             font-size: 16px;
