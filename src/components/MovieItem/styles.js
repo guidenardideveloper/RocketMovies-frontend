@@ -6,13 +6,12 @@ export const Container = styled.div`
     width: max-content;
     display: flex;
     align-items: center;
-    
-    background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BACKGROUND_100};
+    border-radius: 10px;
+
+    background-color: ${({ theme, $isnew }) => $isnew ? "none": `${theme.COLORS.BACKGROUND_200}`};
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-    border: ${({ theme, isNew }) => isNew ? `2px dashed ${theme.COLORS.GRAY_200}` : "none" };
-
-    border-radius: 10px;
+    border: ${({ theme, $isnew }) => $isnew ? `2px dashed ${theme.COLORS.GRAY_200}` : "none" };
 
     font-size: 16px;
     font-style: normal;

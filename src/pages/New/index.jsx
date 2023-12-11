@@ -1,4 +1,3 @@
-import { RiSearch2Fill } from 'react-icons/ri';
 import { Container, Form } from './styles';
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
@@ -30,13 +29,13 @@ export function New() {
                         <h2>Marcadores</h2>
 
                         <div className="editTags">
-                            <MovieItem value={"Ação"} />
-                            <MovieItem isNew />
+                            <MovieItem value="Ação"/>
+                            <MovieItem isNew placeholder="Novo marcador"/>
                         </div>
                     </div>
 
                     <div className="buttonActions">
-                        <Button className='removeMovie' title={"Excluir filme"}/>
+                        <Button className='removeMovie' title={"Excluir filme"} />
                         <Button title={"Salvar alterações"}/>
                     </div>
                 </Form>
