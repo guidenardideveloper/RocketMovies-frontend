@@ -70,8 +70,10 @@ export const Profile = styled.div`
                 color: ${({ theme }) => theme.COLORS.WHITE_100};
             }
 
-            span {
-                text-align: end;
+            a {
+                display: inline-block;
+                width: max-content;
+                align-self: end;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;

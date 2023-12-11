@@ -9,7 +9,9 @@ export function Header() {
                 <div>
                     <div>
                         <strong>Guilherme Denardi</strong>
-                        <span>sair</span>
+                        <a href="#">
+                            <span>sair</span>
+                        </a>
                     </div>
                     <img src="https://github.com/guidenardideveloper.png" alt="Foto do usuário" />
                 </div>
