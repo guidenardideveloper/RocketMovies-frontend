@@ -30,7 +30,8 @@ export default createGlobalStyle`
         transition: filter 0.2s;
     }
 
-    a:hover {
+    a:hover,
+    button:hover {
         filter: brightness(0.9);
     }
 

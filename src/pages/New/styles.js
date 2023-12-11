@@ -24,6 +24,8 @@ export const Form = styled.form`
     margin: 40px auto;
     overflow-y: scroll;
 
+    padding-right: 24px;
+
     > header {
         margin: 24px 0 40px 0;
 
