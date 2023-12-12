@@ -8,7 +8,6 @@ import { ButtonText } from '../../components/ButtonText';
 export function SignUp() {
     return (
         <Container>
-            <Background/>
             <Form>
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
@@ -27,6 +26,7 @@ export function SignUp() {
                     </Link>
                 </div>
             </Form>
+            <Background/>
         </Container>
     )
 }
