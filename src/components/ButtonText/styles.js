@@ -13,5 +13,6 @@ export const Container = styled.button`
 
     svg {
         font-size: 16px;
+        color: ${({ theme }) => theme.COLORS.PINK};
     }
 `;

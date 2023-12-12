@@ -9,6 +9,8 @@ export const Container = styled.button`
     border-radius: 16px;
     font-weight: 500;
 
+    margin-top: 24px;
+
     &:disabled {
         opacity: 0.5;
     }

@@ -54,7 +54,7 @@ export default createGlobalStyle`
     }
 
     *::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.COLORS.PINK};;
+    background: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 8px;
     }
 `;
