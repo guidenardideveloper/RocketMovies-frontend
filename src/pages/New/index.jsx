@@ -5,6 +5,7 @@ import { Input } from '../../components/Input';
 import { Textarea } from '../../components/Textarea';
 import { MovieItem } from '../../components/MovieItem';
 import { Button } from '../../components/Button';
+import { Link } from "react-router-dom";
 
 
 export function New() {
@@ -13,7 +14,9 @@ export function New() {
             <Header/>
             <main>
                 <Form>
-                    <ButtonText title="Voltar" />
+                    <Link to="/">
+                        <ButtonText title="Voltar" />
+                    </Link>
                     <header>
                         <h1>Novo filme</h1>
                     </header>

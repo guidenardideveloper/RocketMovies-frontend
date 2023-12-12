@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.header`
 
     grid-area: header;
@@ -55,6 +54,7 @@ export const Profile = styled.div`
             height: 64px;
             border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
             border-radius: 50%;
+            cursor: pointer;
         }
 
         div {
@@ -81,12 +81,5 @@ export const Profile = styled.div`
                 color: ${({ theme }) => theme.COLORS.GRAY_200};
             }
         }
-    }
-
-    > img {
-        width: 64px;
-        height: 64px;
-        border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
-        border-radius: 50%;
     }
 `;

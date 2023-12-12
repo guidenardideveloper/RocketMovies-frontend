@@ -1,4 +1,5 @@
 import { RiMailLine, RiLockLine, RiUser3Line } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 import { Container, Form, Background } from './styles';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -21,7 +22,9 @@ export function SignUp() {
                 <Button title={"Cadastrar"}/>
 
                 <div className="btn-back">
-                    <ButtonText title={"Voltar para o login"}/>
+                    <Link to="/">
+                        <ButtonText title={"Voltar para o login"}/>
+                    </Link>
                 </div>
             </Form>
         </Container>

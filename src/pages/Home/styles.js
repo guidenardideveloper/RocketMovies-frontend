@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     width: 100%;
@@ -65,4 +66,22 @@ export const Content = styled.div`
         padding-right: 8px;
 
     }
+`;
+
+export const ButtonAdd = styled(Link)`
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 13px 32px;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+    color: ${({ theme }) => theme.COLORS.BLACK_200};
 `;

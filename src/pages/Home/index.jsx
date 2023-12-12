@@ -1,5 +1,5 @@
 import { RiAddLine } from 'react-icons/ri';
-import { Container, Content } from './styles';
+import { Container, Content, ButtonAdd } from './styles';
 import { Header } from '../../components/Header';
 import { MovieCard } from '../../components/MovieCard';
 
@@ -12,10 +12,10 @@ export function Home() {
                 <Content>
                     <div className="addMovie">
                         <h1>Meus filmes</h1>
-                        <button>
+                        <ButtonAdd to="/new">
                             <RiAddLine/>
                             Adicionar filme
-                        </button>
+                        </ButtonAdd>
                     </div>
                     <div className="movieContainer">
                         <MovieCard data={{

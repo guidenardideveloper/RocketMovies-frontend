@@ -3,14 +3,15 @@ import { Container, Form, Avatar } from './styles';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
+import { Link } from "react-router-dom";
 
 export function Profile() {
     return (
         <Container>
             <header>
-                <a href="#">
+                <Link to="/">
                     <ButtonText title={"Voltar"}/>
-                </a>
+                </Link>
             </header>
 
             <Form>
