@@ -3,6 +3,7 @@ import { Container, Content } from './styles';
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Tag } from '../../components/Tag';
+import { Link } from 'react-router-dom';
 
 
 export function Details() {
@@ -11,7 +12,10 @@ export function Details() {
             <Header/>
             <main>
                 <Content>
-                    <ButtonText title="Voltar"/>
+                    <Link to="/">
+                        <ButtonText title="Voltar"/>
+                    </Link>
+                    
 
                     <div className="movieInfos">
                         <h2>Interestellar</h2>
