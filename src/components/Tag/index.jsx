@@ -1,8 +1,8 @@
 import { Container } from './styles';
 
-export function Tag({ title, variant, ...rest }) {
+export function Tag({ title, ...rest }) {
     return (
-        <Container $variant={variant} {...rest}>
+        <Container {...rest}>
             {title}
         </Container>
     );
