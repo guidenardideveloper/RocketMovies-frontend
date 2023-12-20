@@ -6,9 +6,22 @@ import { Textarea } from '../../components/Textarea';
 import { MovieItem } from '../../components/MovieItem';
 import { Button } from '../../components/Button';
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 
 export function New() {
+    const [tags, setTags] = useState([]);
+    const [newTag, setNewTag] = useState("");
+
+    function handleAddTag() {
+        setTags(prevState => [...prevState, newTag]);
+        setNewTag("");
+    }
+
+    function handleRemoveTag(deletedTag) {
+        setTags(prevState => prevState.filter(tag => tag !== deletedTag));
+    }
+
     return (
         <Container>
             <Header/>
@@ -32,8 +45,25 @@ export function New() {
                         <h2>Marcadores</h2>
 
                         <div className="editTags">
-                            <MovieItem value="Ação"/>
-                            <MovieItem isNew placeholder="Novo marcador"/>
+
+                            {
+                                tags.map((tag, index) => (
+                                    <MovieItem
+                                        key={String(index)}
+                                        value={tag}
+                                        onClick={() => handleRemoveTag(tag)}
+                                    />
+                                ))
+                            }
+
+                            <MovieItem 
+                                isNew 
+                                placeholder="Novo marcador"
+                                onChange={e => setNewTag(e.target.value)}
+                                value={newTag}
+                                onClick={handleAddTag}
+                            />
+
                         </div>
                     </div>
 
