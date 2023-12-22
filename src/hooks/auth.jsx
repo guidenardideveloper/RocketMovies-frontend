@@ -32,7 +32,7 @@ function AuthProvider({ children }) {
 
     function signOut() {
         localStorage.removeItem("@rocketmovie:token");
-        localStorage.removeItem("@rocketmovie:user");
+        localStorage.removeItem("rocketmovie:user");
 
         setData({});
     }

@@ -1,19 +1,21 @@
 import { RiAddLine } from 'react-icons/ri';
 import { Container, Content, ButtonAdd } from './styles';
-import { Header } from '../../components/Header';
 import { MovieCard } from '../../components/MovieCard';
 import { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 
+import { Input } from '../../components/Input';
+import { Header } from '../../components/Header';
+
 
 export function Home() {
+    const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState("");
-    const [movie, setMovie] = useState([]);
 
     useEffect(() => {
         async function fetchMovies() {
             const response = await api.get(`/movienotes?title=${search}`);
-            setMovie(response.data);
+            setMovies(response.data);
         }
 
         fetchMovies();
@@ -21,7 +23,12 @@ export function Home() {
 
     return (
         <Container>
-            <Header/>
+            <Header>
+                <Input
+                    placeholder="Pesquisar pelo título"
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+            </Header>
             <main>
                 <Content>
                     <div className="addMovie">
@@ -33,7 +40,7 @@ export function Home() {
                     </div>
                     <div className="movieContainer">
                         {
-                            movie.map(movie => (
+                            movies.map(movie => (
                                 <MovieCard 
                                     key={String(movie.id)}
                                     data={movie}

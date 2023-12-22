@@ -1,11 +1,10 @@
 import { Container, Profile, Brand, SearchMovie } from './styles';
-import { Input } from '../Input/index'
 import { Link } from "react-router-dom";
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
 import placeholder from '../../assets/placeholder.svg';
 
-export function Header() {
+export function Header({children}) {
     const { signOut, user } = useAuth();
 
     const avatarPlaceholder = placeholder;
@@ -18,9 +17,7 @@ export function Header() {
                     <h1>RocketMovies</h1>
                 </Brand>
                 <SearchMovie>
-                    <Input
-                        placeholder="Pesquisar pelo título"
-                    />
+                    {children}
                 </SearchMovie>
                 <div>
                     <div>

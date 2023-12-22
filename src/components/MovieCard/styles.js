@@ -40,14 +40,18 @@ export const Container = styled.button`
 
         p {
             font-size: 16px;
-            font-style: normal;
             font-weight: 400;
-            line-height: normal;
+
+            text-align: justify;
+            line-height: 19px;
             color: ${({ theme }) => theme.COLORS.GRAY_300};
 
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: nowrap;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
     }
 
