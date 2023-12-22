@@ -21,14 +21,21 @@ export const Container = styled.button`
         margin-bottom: 8px;
     }
 
-    svg {
-        font-size: 16px;
-        margin-right: 6px;
-        color: ${({ theme }) => theme.COLORS.PINK};
+    > .rating {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        width: max-content;
+
+        svg {
+            font-size: 16px;
+            color: ${({ theme }) => theme.COLORS.PINK};
+        }
     }
 
+
     > .description {
-        height: 50px;
         margin: 15px 0;
 
         p {

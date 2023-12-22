@@ -12,35 +12,29 @@ export const Container = styled.header`
     justify-content: space-between;
 `;
 
+export const Brand = styled.div`
+    > h1 {
+        color: ${({ theme }) => theme.COLORS.PINK};
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+`;
+
+export const SearchMovie = styled.div`
+    width: 630px;
+`;
+
 export const Profile = styled.div`
 
-    width: 1120px;
+    width: 1135px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     margin: 0 auto;
-
-    > h1 {
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        color: ${({ theme }) => theme.COLORS.PINK};
-    }
-
-    > input {
-        width: 630px;
-        padding: 19px 24px;
-        border: none;
-        border-radius: 10px;
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
-
-        font-size: 14px;
-        font-weight: 400;
-        color: ${({ theme }) => theme.COLORS.GRAY_200};
-    }
 
     > div {
         display: flex;

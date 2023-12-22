@@ -1,18 +1,27 @@
-import { Container, Profile } from './styles';
+import { Container, Profile, Brand, SearchMovie } from './styles';
+import { Input } from '../Input/index'
 import { Link } from "react-router-dom";
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
+import placeholder from '../../assets/placeholder.svg';
 
 export function Header() {
     const { signOut, user } = useAuth();
 
-    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
+    const avatarPlaceholder = placeholder;
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     return (
         <Container>
             <Profile>
-                <h1>RocketMovies</h1>
-                <input type="text" placeholder='Pesquise pelo título' />
+                <Brand>
+                    <h1>RocketMovies</h1>
+                </Brand>
+                <SearchMovie>
+                    <Input
+                        placeholder="Pesquisar pelo título"
+                    />
+                </SearchMovie>
                 <div>
                     <div>
                         <strong>{user.name}</strong>

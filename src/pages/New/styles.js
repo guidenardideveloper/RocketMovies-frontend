@@ -20,12 +20,13 @@ export const Container = styled.div`
 
 export const Form = styled.form`
     max-width: 1137px;
-    height: 783px;
+    height: 700px;
     margin: 40px auto;
     overflow-y: scroll;
 
     padding-right: 24px;
-
+    padding-bottom: 24px;
+    
     > header {
         margin: 24px 0 40px 0;
 

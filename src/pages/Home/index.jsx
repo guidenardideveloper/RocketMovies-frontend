@@ -2,9 +2,23 @@ import { RiAddLine } from 'react-icons/ri';
 import { Container, Content, ButtonAdd } from './styles';
 import { Header } from '../../components/Header';
 import { MovieCard } from '../../components/MovieCard';
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
 
 
 export function Home() {
+    const [search, setSearch] = useState("");
+    const [movie, setMovie] = useState([]);
+
+    useEffect(() => {
+        async function fetchMovies() {
+            const response = await api.get(`/movienotes?title=${search}`);
+            setMovie(response.data);
+        }
+
+        fetchMovies();
+    }, [search])
+
     return (
         <Container>
             <Header/>
@@ -18,45 +32,14 @@ export function Home() {
                         </ButtonAdd>
                     </div>
                     <div className="movieContainer">
-                        <MovieCard data={{
-                            title: 'Interestellar',
-                            tags: [
-                                { id: '1', name: 'Ficção Científica' },
-                                { id: '2', name: 'Drama' },
-                                { id: '3', name: 'Família' }
-                            ]
-                        }}
-                        />
-
-                        <MovieCard data={{
-                            title: 'Interestellar',
-                            tags: [
-                                { id: '1', name: 'Ficção Científica' },
-                                { id: '2', name: 'Drama' },
-                                { id: '3', name: 'Família' }
-                            ]
-                        }}
-                        />
-                        
-                        <MovieCard data={{
-                            title: 'Interestellar',
-                            tags: [
-                                { id: '1', name: 'Ficção Científica' },
-                                { id: '2', name: 'Drama' },
-                                { id: '3', name: 'Família' }
-                            ]
-                        }}
-                        />
-
-                        <MovieCard data={{
-                            title: 'Interestellar',
-                            tags: [
-                                { id: '1', name: 'Ficção Científica' },
-                                { id: '2', name: 'Drama' },
-                                { id: '3', name: 'Família' }
-                            ]
-                        }}
-                        />
+                        {
+                            movie.map(movie => (
+                                <MovieCard 
+                                    key={String(movie.id)}
+                                    data={movie}
+                                />
+                            ))
+                        }
                     </div>
                 </Content>
             </main>
