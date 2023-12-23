@@ -2,6 +2,7 @@ import { RiAddLine } from 'react-icons/ri';
 import { Container, Content, ButtonAdd } from './styles';
 import { MovieCard } from '../../components/MovieCard';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 
 import { Input } from '../../components/Input';
@@ -11,6 +12,12 @@ import { Header } from '../../components/Header';
 export function Home() {
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState("");
+
+    const navigate = useNavigate();
+
+    function handleDetails(id) {
+        navigate(`/details/${id}`);
+    }
 
     useEffect(() => {
         async function fetchMovies() {
@@ -44,6 +51,7 @@ export function Home() {
                                 <MovieCard 
                                     key={String(movie.id)}
                                     data={movie}
+                                    onClick={() => handleDetails(movie.id)}
                                 />
                             ))
                         }
