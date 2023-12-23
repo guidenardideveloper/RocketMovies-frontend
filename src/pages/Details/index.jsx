@@ -1,4 +1,4 @@
-import { RiStarFill, RiStarLine, RiTimeLine } from 'react-icons/ri';
+import { RiTimeLine } from 'react-icons/ri';
 import { Container, Content } from './styles';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -10,18 +10,19 @@ import { api } from '../../services/api';
 import {Rating} from '../../components/Rating';
 import avatarPlaceholder from '../../assets/placeholder.svg';
 import { useAuth } from "../../hooks/auth";
-import { DateHour } from '../../components/DateHour';
-
+import moment from 'moment';
+import 'moment-timezone';
 
 
 export function Details() {
     const [data, setData] = useState(null);
+    const [, setCreated] = useState("");
 
     const params = useParams();
     const { user } = useAuth();
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
-
+    
     useEffect(() => {
         async function fetchMovie() {
             const response = await api.get(`/movieNotes/${params.id}`);
@@ -29,6 +30,15 @@ export function Details() {
         }
 
         fetchMovie();
+    }, [])
+
+    useEffect(() => {
+        async function fetchCreatedAt() {
+            const response = await api.get(`/movieNotes/${params.created_at}`);
+            setCreated(response.data);
+        }
+
+        fetchCreatedAt();
     }, [])
 
     return (
@@ -48,12 +58,21 @@ export function Details() {
                         <Rating rating={data.rating}/>
                     </div>
 
+
                     <div className="infoUser">
                         <div className="createdBy">
                             <img src={avatarURL} alt={user.name} />
                             <span>Por {user.name}</span>
                         </div>
-                        <DateHour/>
+                        
+                        {
+                            data.created_at && (
+                                <div className="createdAt">
+                                    <RiTimeLine/>
+                                    <span>{moment(data.created_at, "DD-MM-YYYY").format('L')} às {moment(data.created_at).format('LT')}</span>
+                                </div>
+                            )
+                        }
                     </div>
 
                     {data.tags && (
