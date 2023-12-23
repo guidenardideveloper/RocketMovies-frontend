@@ -22,8 +22,6 @@ export function Details() {
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
-    //const formattedDate = Moment.utc(data.updated_at).tz("America/Sao_Paulo").format("DD/MM/YYYY HH:mm:ss");
-
     useEffect(() => {
         async function fetchMovie() {
             const response = await api.get(`/movieNotes/${params.id}`);
