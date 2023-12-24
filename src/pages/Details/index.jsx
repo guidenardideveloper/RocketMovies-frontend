@@ -1,28 +1,29 @@
-import { RiTimeLine } from 'react-icons/ri';
-import { Container, Content } from './styles';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { RiTimeLine } from 'react-icons/ri';
+import moment from 'moment-timezone';
+import { api } from '../../services/api';
+import { useAuth } from "../../hooks/auth";
+import { Container, Content } from './styles';
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Tag } from '../../components/Tag';
-import { Link } from 'react-router-dom';
-import { api } from '../../services/api';
-import {Rating} from '../../components/Rating';
+import { Rating } from '../../components/Rating';
 import avatarPlaceholder from '../../assets/placeholder.svg';
-import { useAuth } from "../../hooks/auth";
-import moment from 'moment';
-import 'moment-timezone';
 
 
 export function Details() {
     const [data, setData] = useState(null);
-    const [, setCreated] = useState("");
+    const [,setDate] = useState("");
 
     const params = useParams();
     const { user } = useAuth();
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
-    
+
+
+
     useEffect(() => {
         async function fetchMovie() {
             const response = await api.get(`/movieNotes/${params.id}`);
@@ -35,11 +36,12 @@ export function Details() {
     useEffect(() => {
         async function fetchCreatedAt() {
             const response = await api.get(`/movieNotes/${params.created_at}`);
-            setCreated(response.data);
+            setDate(response.data);            
         }
 
         fetchCreatedAt();
     }, [])
+
 
     return (
         <Container>
@@ -69,7 +71,9 @@ export function Details() {
                             data.created_at && (
                                 <div className="createdAt">
                                     <RiTimeLine/>
-                                    <span>{moment(data.created_at, "DD-MM-YYYY").format('L')} às {moment(data.created_at).format('LT')}</span>
+                                    <span>
+                                        {moment.utc(data.created_at).tz('America/Sao_Paulo').format('DD/MM/YYYY')} às {moment.utc(data.created_at).tz('America/Sao_Paulo').format('HH:mm')}
+                                    </span>
                                 </div>
                             )
                         }
