@@ -29,6 +29,13 @@ export const Content = styled.div`
 
     overflow-y: scroll;
 
+    > .buttonTextActions {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
     > .movieInfos {
         display: flex;
         align-items: baseline;

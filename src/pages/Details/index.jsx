@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { RiTimeLine } from 'react-icons/ri';
 import moment from 'moment-timezone';
 import { api } from '../../services/api';
@@ -11,6 +11,7 @@ import { ButtonText } from '../../components/ButtonText';
 import { Tag } from '../../components/Tag';
 import { Rating } from '../../components/Rating';
 import avatarPlaceholder from '../../assets/placeholder.svg';
+import { ButtonDelete } from '../../components/ButtonDelete';
 
 
 export function Details() {
@@ -55,9 +56,10 @@ export function Details() {
                 data&& 
                 <main>
                 <Content>
-                    <Link to="/">
+                    <div className="buttonTextActions">
                         <ButtonText title="Voltar" onClick={handleBack}/>
-                    </Link>
+                        <ButtonDelete title="Excluir"/>
+                    </div>
                     
 
                     <div className="movieInfos">

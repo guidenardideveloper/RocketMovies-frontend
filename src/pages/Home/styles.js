@@ -38,24 +38,6 @@ export const Content = styled.div`
             line-height: normal;
             color: ${({ theme }) => theme.COLORS.WHITE};
         }
-
-        button {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 13px 32px;
-            border: none;
-            border-radius: 8px;
-
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-
-            background-color: ${({ theme }) => theme.COLORS.PINK};
-            color: ${({ theme }) => theme.COLORS.BLACK_200};
-        }
     }
 
     > .movieContainer {

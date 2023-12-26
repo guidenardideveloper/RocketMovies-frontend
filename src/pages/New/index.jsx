@@ -35,9 +35,14 @@ export function New() {
             return alert("Digite o título do filme")
         }
 
+        if (rating > 5) {
+            return alert("Favor informar uma nota de 0 à 5")
+        } 
+
         if (!rating) {
             return alert("Você esqueceu de adicionar uma nota de 0 a 5 para o filme.");
         }
+
 
         if(newTag) {
             return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.")
@@ -109,8 +114,7 @@ export function New() {
                     </div>
 
                     <div className="buttonActions">
-                        <Button className='removeMovie' title={"Excluir filme"} />
-                        <Button title={"Salvar filme"} onClick={handleNewMovie} />
+                        <Button title={"Salvar filme"} onClick={handleNewMovie} className='saveMovie'/>
                     </div>
                 </Form>
             </main>

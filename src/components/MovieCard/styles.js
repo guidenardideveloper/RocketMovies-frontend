@@ -58,7 +58,22 @@ export const Container = styled.button`
     > footer {
         width: 100%;
         display: flex;
+        align-items: center;
+        
         gap: 8px;
-        margin-top: 24px;
+        margin-top: 50px;
+
+
+        .tags{
+            flex: 1;
+        }
+
+        .latestPost{
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                color: ${({ theme }) => theme.COLORS.GRAY_200};
+            }
+        }
     }
 `;

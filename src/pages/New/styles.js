@@ -48,7 +48,6 @@ export const Form = styled.form`
 
     > .tagMakers {
         width: 100%;
-        margin-bottom: 40px;
 
         h2 {
             font-size: 20px;
@@ -77,15 +76,11 @@ export const Form = styled.form`
     > .buttonActions {
         display: flex;
         align-items: center;
-        gap: 40px;
+        justify-content: center;
 
-        .removeMovie {
-            background-color: ${({ theme }) => theme.COLORS.BACKGROUND_300};
-            color: ${({ theme }) => theme.COLORS.PINK};
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
+        .saveMovie {
+            width: 700px;
+            margin: 50px 0;
         }
     }
 `;
