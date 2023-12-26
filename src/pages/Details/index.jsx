@@ -28,7 +28,14 @@ export function Details() {
         navigate('/');
     }
 
+    async function handleRemove() {
+        const confirm = window.confirm("Deseja realmente excluir o resumo do filme?");
 
+        if(confirm) {
+            await api.delete(`/movieNotes/${params.id}`);
+            navigate('/');
+        }
+    }
 
     useEffect(() => {
         async function fetchMovie() {
@@ -58,7 +65,7 @@ export function Details() {
                 <Content>
                     <div className="buttonTextActions">
                         <ButtonText title="Voltar" onClick={handleBack}/>
-                        <ButtonDelete title="Excluir"/>
+                        <ButtonDelete title="Excluir" onClick={handleRemove}/>
                     </div>
                     
 
