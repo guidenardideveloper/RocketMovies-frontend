@@ -4,7 +4,7 @@ import { Container, Form, Avatar } from './styles';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import placeholder from '../../assets/placeholder.svg';
@@ -21,7 +21,9 @@ export function Profile() {
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     const [avatar, setAvatar] = useState(avatarUrl);
-    const [avatarFile, setAvatarFile] = useState()
+    const [avatarFile, setAvatarFile] = useState();
+
+    const navigate = useNavigate();
 
     async function handleUpdate() {
         const user = {
@@ -42,12 +44,14 @@ export function Profile() {
         setAvatar(imagePreview);
     }
 
+    function handleBack() {
+        navigate(-1);
+    }
+
     return (
         <Container>
             <header>
-                <Link to="/">
-                    <ButtonText title={"Voltar"}/>
-                </Link>
+                <ButtonText title={"Voltar"} onClick={handleBack}/>
             </header>
 
             <Form>

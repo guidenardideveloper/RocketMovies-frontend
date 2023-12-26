@@ -25,7 +25,7 @@ export function Details() {
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     function handleBack() {
-        navigate('/');
+        navigate(-1);
     }
 
     async function handleRemove() {
@@ -33,7 +33,7 @@ export function Details() {
 
         if(confirm) {
             await api.delete(`/movieNotes/${params.id}`);
-            navigate('/');
+            navigate(-1);
         }
     }
 

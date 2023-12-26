@@ -79,7 +79,7 @@ export const Form = styled.form`
         justify-content: center;
 
         .saveMovie {
-            width: 700px;
+            width: 600px;
             margin: 50px 0;
         }
     }

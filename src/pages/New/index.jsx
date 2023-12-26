@@ -5,7 +5,7 @@ import { Input } from '../../components/Input';
 import { Textarea } from '../../components/Textarea';
 import { MovieItem } from '../../components/MovieItem';
 import { Button } from '../../components/Button';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { api } from '../../services/api';
 
@@ -56,7 +56,11 @@ export function New() {
         });
 
         alert("Filme criado com sucesso!");
-        navigate("/");
+        navigate(-1);
+    }
+
+    function handleBack() {
+        navigate(-1);
     }
 
     return (
@@ -64,9 +68,7 @@ export function New() {
             <Header/>
             <main>
                 <Form>
-                    <Link to="/">
-                        <ButtonText title="Voltar"/>
-                    </Link>
+                    <ButtonText title="Voltar" onClick={handleBack}/>
                     <header>
                         <h1>Novo filme</h1>
                     </header>
