@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RiTimeLine } from 'react-icons/ri';
 import moment from 'moment-timezone';
 import { api } from '../../services/api';
@@ -19,8 +19,13 @@ export function Details() {
 
     const params = useParams();
     const { user } = useAuth();
+    const navigate = useNavigate();
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+    function handleBack() {
+        navigate('/');
+    }
 
 
 
@@ -51,7 +56,7 @@ export function Details() {
                 <main>
                 <Content>
                     <Link to="/">
-                        <ButtonText title="Voltar"/>
+                        <ButtonText title="Voltar" onClick={handleBack}/>
                     </Link>
                     
 

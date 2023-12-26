@@ -26,7 +26,8 @@ export function Home() {
         }
 
         fetchMovies();
-    }, [search])
+    }, [search]);
+
 
     return (
         <Container>
