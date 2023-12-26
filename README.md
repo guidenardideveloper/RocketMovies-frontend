@@ -43,24 +43,27 @@ Neste projeto aprendi a utilizar o biblioteca React para criação de interface,
 ## Screenshots
 
 ### SignIn Screen
-<img src=".github/SignIn.jpg">
+<img src=".github/loginScreen.jpeg">
 
 
 ### SignUp Screen
-<img src=".github/SignUp.jpg">
+<img src=".github/signUpScreen.jpeg">
 
 
 ### Home Screen
-<img src=".github/Home.jpg">
+<img src=".github/screenHome.jpeg">
 
 ### Movie Preview
-<img src=".github/MoviePreview.jpg">
+<img src=".github/detailsScreen.jpeg">
 
 ### Creating Move
-<img src=".github/Create Movie.jpg">
+<img src=".github/screenNewMovie.jpeg">
 
 ### Profile Screen
-<img src=".github/Perfil.jpg">
+<img src=".github/editProfile.jpeg">
+
+### Profile Update Screen
+<img src=".github/updateAvatar.jpeg">
 
 
 ## Melhorias
